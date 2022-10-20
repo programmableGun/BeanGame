@@ -23,7 +23,7 @@ public class movement : MonoBehaviour
             resetPosition();
             audioManager.playerDied.Play();
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
+        if (Input.GetKey(KeyCode.UpArrow) && canJump)
         {
 
             setVelocity(forceAmt*jumpMultiplyer, 2);
