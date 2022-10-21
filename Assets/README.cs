@@ -7,6 +7,6 @@ add combo counter
     Level Generation:
 Change the level Generator, instead of complete randomness, the generator will generate chuncks that have been preloaed into the script
 
-    
+    hehehehheheheh
 
 */
