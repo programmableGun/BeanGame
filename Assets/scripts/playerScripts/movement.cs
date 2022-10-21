@@ -82,7 +82,7 @@ public class movement : MonoBehaviour
     {
         if (gameObject.transform.position.y < -15) {
             resetPosition();
-            
+            //hehehehehe
         }
     }
 
