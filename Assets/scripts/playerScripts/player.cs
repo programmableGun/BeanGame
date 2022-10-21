@@ -6,6 +6,8 @@ public class player : MonoBehaviour
 {
     int maxZDistace = 0;
     public scoreManager scrManager;
+    public GameObject deadScreen;
+    public ParticleSystem particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +32,15 @@ public class player : MonoBehaviour
     public void Die() {
 
         //lose control of player
-        //GetComponent<movement>().controlsEnabled = false;
+        GetComponent<movement>().controlsEnabled = false;
         // show a respawn screen
+        deadScreen.SetActive(true);
 
         // play death effect
+        particle.Play();
+        // wait for the player to press r >> this gets detected in movement.cs
 
-        // wait for the player to press r
-
-        GetComponent<movement>().resetPosition();//temp
+        
     }
+    
 }

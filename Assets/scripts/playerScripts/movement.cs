@@ -17,12 +17,8 @@ public class movement : MonoBehaviour
     public bool controlsEnabled = true;
 
     public void onKeypressMove() {  // basic movement with a rigidbody
-        if (controlsEnabled) {
-            if (Input.GetKeyDown(KeyCode.R)) // press R key to reset position
-            {
-                resetPosition();
-                audioManager.playerDied.Play();
-            }
+        if (controlsEnabled)
+        {
             if (Input.GetKey(KeyCode.UpArrow) && canJump)
             {
 
@@ -47,6 +43,15 @@ public class movement : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 rb.AddForce(new Vector3(forceAmt, 0f, 0f));
+            }
+        }
+        else {
+            if (Input.GetKey(KeyCode.R)) {
+                controlsEnabled = true;
+                resetPosition();
+                GetComponent<player>().deadScreen.SetActive(false);
+                GetComponent<player>().particle.Stop();
+                scrManager.resetCombo();
             }
         }
     }

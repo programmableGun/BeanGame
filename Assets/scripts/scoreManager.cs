@@ -23,7 +23,7 @@ public class scoreManager : MonoBehaviour
     }
     public void addScore(int amt)
     {
-        score += (int)(amt*combo/1.15*Time.time);
+        score += (int)(amt*(combo + 1));
         
         setScore(score);
     }

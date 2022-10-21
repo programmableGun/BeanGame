@@ -153,7 +153,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 141964413}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.764151, g: 0, b: 0, a: 0.68235296}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -225,8 +225,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1917373238}
   - {fileID: 60657125}
+  - {fileID: 1917373238}
   m_Father: {fileID: 493826332}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -235,6 +235,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!198 &265642284 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3612726515004290557, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+  m_PrefabInstance: {fileID: 1630860287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &266279275
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +916,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrManager: {fileID: 1765659799}
+  deadScreen: {fileID: 141964412}
+  particle: {fileID: 265642284}
 --- !u!82 &1035966067
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1487,6 +1494,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3612726515004290557, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 6.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612726515004290557, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 8.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612726515004290557, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612726515004290557, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 2.64
+      objectReference: {fileID: 0}
     - target: {fileID: 5302822838008114960, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1801,7 +1824,7 @@ MonoBehaviour:
   playerDied: {fileID: 1035966068}
   playerJump: {fileID: 1035966067}
   comboSfxPitch:
-  - 0.35
+  - 1
   - 1.15
   - 1.35
   - 1.5
@@ -1887,7 +1910,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 141964413}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
