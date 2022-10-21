@@ -14,41 +14,41 @@ public class movement : MonoBehaviour
     public AudioManager audioManager;
     public bloom bloom;
     public scoreManager scrManager;
-    
+    public bool controlsEnabled = true;
 
     public void onKeypressMove() {  // basic movement with a rigidbody
+        if (controlsEnabled) {
+            if (Input.GetKeyDown(KeyCode.R)) // press R key to reset position
+            {
+                resetPosition();
+                audioManager.playerDied.Play();
+            }
+            if (Input.GetKey(KeyCode.UpArrow) && canJump)
+            {
 
-        if (Input.GetKeyDown(KeyCode.R)) // press R key to reset position
-        {
-            resetPosition();
-            audioManager.playerDied.Play();
-        }
-        if (Input.GetKey(KeyCode.UpArrow) && canJump)
-        {
+                setVelocity(forceAmt * jumpMultiplyer, 2);
+                audioManager.playerJump.Play();
+                canJump = false;
+                bloom.DoBloom(false);
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                rb.AddForce(new Vector3(0f, 0f, forceAmt));
 
-            setVelocity(forceAmt*jumpMultiplyer, 2);
-            audioManager.playerJump.Play();
-            canJump = false;
-            bloom.DoBloom(false);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                rb.AddForce(new Vector3(0f, 0f, -forceAmt));
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForce(new Vector3(-forceAmt, 0f, 0f));
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForce(new Vector3(forceAmt, 0f, 0f));
+            }
         }
-        if (Input.GetKey(KeyCode.W)) 
-        {
-            rb.AddForce(new Vector3(0f, 0f, forceAmt));
-            
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(new Vector3(0f, 0f, -forceAmt));
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(new Vector3(-forceAmt, 0f, 0f));
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(new Vector3(forceAmt, 0f, 0f));
-        }
-
     }
 
     public void setVelocity(float val,int index) {

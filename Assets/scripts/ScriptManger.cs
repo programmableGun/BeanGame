@@ -29,7 +29,7 @@ public class ScriptManger : MonoBehaviour
     {
         playerMovement.onKeypressMove();
         playerMovement.CheckHasFallinToDeath();
-        if (Input.GetKeyDown(KeyCode.P)) { nextLevel(); }
+        if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false); nextLevel(); }
 
     }
     public static void nextLevel() {

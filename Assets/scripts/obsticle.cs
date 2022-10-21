@@ -13,7 +13,7 @@ public class obsticle : MonoBehaviour
         Debug.Log(obj.gameObject.name);
         audiomanager.playerDied.Play();
         if (obj.gameObject.name.Equals("bean")) {
-            obj.gameObject.GetComponent<movement>().resetPosition();
+            obj.gameObject.GetComponent<player>().Die();
         }
     }
 

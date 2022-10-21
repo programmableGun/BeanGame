@@ -27,4 +27,16 @@ public class player : MonoBehaviour
         }
         
     }
+    public void Die() {
+
+        //lose control of player
+        //GetComponent<movement>().controlsEnabled = false;
+        // show a respawn screen
+
+        // play death effect
+
+        // wait for the player to press r
+
+        GetComponent<movement>().resetPosition();//temp
+    }
 }
