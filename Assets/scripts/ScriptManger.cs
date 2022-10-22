@@ -29,10 +29,10 @@ public class ScriptManger : MonoBehaviour
     {
         playerMovement.onKeypressMove();
         playerMovement.CheckHasFallinToDeath();
-        if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false); nextLevel(); }
+        if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false);}
 
     }
-    public static void nextLevel() {
+    public void nextLevel() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("runner");
     }
    

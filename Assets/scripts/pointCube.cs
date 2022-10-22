@@ -34,6 +34,7 @@ public class pointCube : MonoBehaviour
         if (collision.gameObject.name.Equals("bean"))
         {
             scrManager.combo++;
+            scrManager.updateComboText();
             scrManager.addScore(150);
             comboSoundEffect();
 

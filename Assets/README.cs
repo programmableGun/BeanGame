@@ -5,9 +5,9 @@ make the bean explode when it dies
 add combo counter text
  Gameplay:
 make the bean explode when it dies
+ progress bar on the left or right
 Change Level every time the player hits the end of the level. 
-add combo counter
+make the touched lava explode when the player collides with it.
 
-     hehehhehe  
 
 */

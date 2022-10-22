@@ -10,13 +10,20 @@ public class movement : MonoBehaviour
     public float jumpMultiplyer = 1f;
     private float velocity = 0f;
     private bool canJump = true;
+
     public GameObject winScreen;
     public AudioManager audioManager;
+
     public bloom bloom;
+    
+
     public scoreManager scrManager;
     public ScriptManger scriptManger;
+
     public bool controlsEnabled = true;
     public bool nextLevelLocked = true;
+
+    //this is starting to become speghetti code and i want to fix it
     public void onKeypressMove() {  // basic movement with a rigidbody
         if (controlsEnabled)
         {
@@ -88,15 +95,18 @@ public class movement : MonoBehaviour
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
             winScreen.SetActive(true);
+            scrManager.nextLevel();
+        }            
             
 
-}
+
     }
     public void CheckHasFallinToDeath()
     {
         if (gameObject.transform.position.y < -15) {
             resetPosition();
-            //hehehehehe
+            //aaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+
         }
     }
 

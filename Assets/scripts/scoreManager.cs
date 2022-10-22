@@ -8,12 +8,13 @@ public class scoreManager : MonoBehaviour
     [SerializeField]
     public int combo = 0;
     public Text scoreText;
-    
+    public Text comboText;
 
     
     public void resetCombo() {
         combo = 0;
         Debug.Log("reseting combo");
+        updateComboText();
     }
     public void setScore(int amt) {
         score = amt;
@@ -27,9 +28,11 @@ public class scoreManager : MonoBehaviour
         
         setScore(score);
     }
-    void updateScoreText(){
+    public void updateScoreText(){
         
         scoreText.text = score.ToString();
     }
-    
+    public void updateComboText(){
+        comboText.text = combo.ToString();
+    }
 }
