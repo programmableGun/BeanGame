@@ -7,13 +7,14 @@ public class obsticle : MonoBehaviour
     public AudioManager audiomanager;
     public int type=0;
     public float rotationSpeed = 0.5f;
-
+    public ParticleSystem explosionParticle;
     private void OnCollisionEnter(Collision obj)
     {
         Debug.Log(obj.gameObject.name);
         audiomanager.playerDied.Play();
         if (obj.gameObject.name.Equals("bean")) {
             obj.gameObject.GetComponent<player>().Die();
+            Explode();
         }
     }
 
@@ -22,7 +23,7 @@ public class obsticle : MonoBehaviour
         type = Random.Range(0, 4);
 
     }
-
+    
     private void Update()
     {
         if (type == 1) {
@@ -32,5 +33,8 @@ public class obsticle : MonoBehaviour
         {
             this.gameObject.transform.Rotate(new Vector3(rotationSpeed, rotationSpeed, 0f));
         }
+    }
+    private void Explode(){
+        explosionParticle.Play();
     }
 }
