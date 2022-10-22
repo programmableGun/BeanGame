@@ -27,9 +27,9 @@ public class ScriptManger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false);}
 
     }
-    public void nextLevel() {
-        level
-        UnityEngine.SceneManagement.SceneManager.LoadScene("runner");
+    public void nextLevel(int level) {
+        
+        Destroy()
 
     }
    
