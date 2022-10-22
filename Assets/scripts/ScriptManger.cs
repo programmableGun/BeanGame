@@ -8,18 +8,13 @@ public class ScriptManger : MonoBehaviour
     public spawnObsticles obsticleSpawn;
     //player scrips
     public movement playerMovement;
-
+    public int level = 1;
     
     
 
     void Start()
     {
-        obsticleSpawn.startCloning(200, obsticleSpawn.pointCube);
-        obsticleSpawn.randomPostionY_max = 80;obsticleSpawn.randomPostionX_max = 32;
-        obsticleSpawn.startCloning(200, obsticleSpawn.obsticle);
-        obsticleSpawn.startCloning(200, obsticleSpawn.obsticle);
-        obsticleSpawn.randomPostionY_max = 150; obsticleSpawn.randomPostionX_max = 64;
-        obsticleSpawn.startCloning(200, obsticleSpawn.obsticle);
+        obsticleSpawn.GenerateLevel(level);
         playerMovement.winScreen.SetActive(false);
         playerMovement.setVelocity(20, 3);
     }
@@ -33,7 +28,9 @@ public class ScriptManger : MonoBehaviour
 
     }
     public void nextLevel() {
+        level
         UnityEngine.SceneManagement.SceneManager.LoadScene("runner");
+
     }
    
 

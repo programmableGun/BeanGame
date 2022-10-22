@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class spawnObsticles : MonoBehaviour
 {
-
-    public GameObject obsticle;
-    public GameObject pointCube;
-    public int randomPostionY_max = 50;
-    public int randomPostionX_max = 16;
-    public void startCloning(int amt, GameObject obj) {
-        for (int i = 0; i < amt; i++) {
-            setRandomLocation(i*15,obj);
-            setRandomSize(15, 15, obj);
-            GameObject clone = Instantiate(obj);
-        }
-    }
-    void setRandomSize(int widthMax, int heightMax, GameObject obj) { 
-        obj.transform.localScale = new Vector3((float)Random.Range(2, widthMax), //x
-            (float)Random.Range(2, heightMax),  //y
-            (float)Random.Range(2, 30)); //z
-    }
-    private void setRandomLocation(int section, GameObject obj) {
-        obj.transform.position = new Vector3((float)Random.Range(-randomPostionX_max, randomPostionX_max), //x
-            (float)Random.Range(-8,randomPostionY_max),  //y
-            (float)Random.Range(section,section+30)); //z
+    public GameObject[] obsitcles;// list of different obsticles chunks
+    public GameObject[] floors;  // list of different flooring
+    public Transform spawnPointer;  //shows the generator where to instaniate the chunks of the level;
+    public int constantOffset = 20; 
+    public void GenerateLevel(int level){
+        for(int i = 0; i < level + constantOffset;i++){
+            spawnPointer.position = new Vector3(0f,0f, i * spawnPointer.localScale.z); // sets the spawn pointer to the center of the next spot
+            GameObject floorClone = Instantiate(floors[Random.Range(0,floors.length)], spawnPointer);
+            GameObject obsitcles = Instantiate(obsitcles[Random.Range(0,obsticle.length)], spawnPointer);
+        }   
     }
     
 }
