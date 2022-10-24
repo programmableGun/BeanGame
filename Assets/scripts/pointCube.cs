@@ -15,6 +15,8 @@ public class pointCube : MonoBehaviour
     {
         type = Random.Range(0, 4);
         rotationSpeed = Random.Range(-0.1f, 0.1f);
+        audioManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
+        scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
     }
 
     private void Update()

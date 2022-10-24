@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     int maxZDistace = 0;
@@ -9,12 +9,14 @@ public class player : MonoBehaviour
     public GameObject deadScreen;
     public ParticleSystem particle;
     public Slider progressBar;
+    
     // Start is called before the first frame update
     void Start()
     {
         maxZDistace = (int)this.gameObject.transform.position.z;
         scrManager.addScore(10);
         scrManager.addScore(20);
+        progressBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class player : MonoBehaviour
         deadScreen.SetActive(true);
 
         // Explode
-        particle.Play();
+        //particle.Play();
         // wait for the player to press r >> this gets detected in movement.cs
 
         

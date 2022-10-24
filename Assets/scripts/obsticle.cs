@@ -21,7 +21,7 @@ public class obsticle : MonoBehaviour
     private void Start()
     {
         type = Random.Range(0, 4);
-
+        audiomanager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
     }
     
     private void Update()
@@ -35,6 +35,6 @@ public class obsticle : MonoBehaviour
         }
     }
     private void Explode(){
-        explosionParticle.Play();
+        //explosionParticle.Play();
     }
 }

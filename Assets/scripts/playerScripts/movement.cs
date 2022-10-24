@@ -62,11 +62,7 @@ public class movement : MonoBehaviour
                 GetComponent<player>().particle.Stop();
                 scrManager.resetCombo();
             }
-            else if(Input.GetKey(KeyCode.R) && !nextLevelLocked) {
-                Debug.Log("next level called");
-                nextLevelLocked = true;
-                ScriptManger.nextLevel();
-            }
+            
         }
     }
 
@@ -95,7 +91,7 @@ public class movement : MonoBehaviour
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
             winScreen.SetActive(true);
-            scrManager.nextLevel();
+            scriptManger.nextLevel();
         }            
             
 

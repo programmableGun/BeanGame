@@ -9,7 +9,7 @@ public class ScriptManger : MonoBehaviour
     //player scrips
     public movement playerMovement;
     public int level = 1;
-    
+    public GameObject parentOfClone;
     
 
     void Start()
@@ -27,10 +27,10 @@ public class ScriptManger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false);}
 
     }
-    public void nextLevel(int level) {
+    public void nextLevel() {
+        level++;
+        Destroy(parentOfClone); //THIS DESTORYS THE PARENT AND WILL NEED TO BE  FIXEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
         
-        Destroy()
-
     }
    
 
