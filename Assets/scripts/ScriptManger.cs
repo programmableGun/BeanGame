@@ -17,6 +17,7 @@ public class ScriptManger : MonoBehaviour
         obsticleSpawn.GenerateLevel(level);
         playerMovement.winScreen.SetActive(false);
         playerMovement.setVelocity(20, 3);
+        
     }
 
     
@@ -29,7 +30,7 @@ public class ScriptManger : MonoBehaviour
     }
     public void nextLevel() {
         level++;
-        Destroy(parentOfClone); //THIS DESTORYS THE PARENT AND WILL NEED TO BE  FIXEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        Destroy(parentOfClone); //THIS DESTORYS THE PARENT, AND WILL NEED TO BE  FIXEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
         
     }
    

@@ -34,6 +34,6 @@ public class scoreManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
     public void updateComboText(){
-        comboText.text = combo.ToString();
+        comboText.text = combo + "x";
     }
 }

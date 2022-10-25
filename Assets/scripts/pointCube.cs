@@ -8,6 +8,7 @@ public class pointCube : MonoBehaviour
 
     public Renderer rend;
     public AudioManager audioManager;
+    public GameObject destoryedVersion;
     private int type;
     private float rotationSpeed;
 
@@ -31,15 +32,17 @@ public class pointCube : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name.Equals("bean"))
+        if (other.gameObject.name.Equals("bean"))
         {
             scrManager.combo++;
             scrManager.updateComboText();
             scrManager.addScore(150);
             comboSoundEffect();
-
+            other.gameObject.GetComponent<movement>().canJump = true;
+            other.gameObject.GetComponent<movement>().bloom.DoBloom(true);
+            Instantiate(destoryedVersion, transform.position, transform.rotation);
             Destroy(this.gameObject);
 
         }

@@ -9,7 +9,7 @@ public class movement : MonoBehaviour
     public float forceAmt = 300f;
     public float jumpMultiplyer = 1f;
     private float velocity = 0f;
-    private bool canJump = true;
+    public bool canJump = true;
 
     public GameObject winScreen;
     public AudioManager audioManager;
@@ -83,10 +83,6 @@ public class movement : MonoBehaviour
             canJump = true;
             bloom.DoBloom(true);
             scrManager.resetCombo();
-        }
-        if (collision.gameObject.tag.Equals("pointBlock")) {
-            canJump = true;
-            bloom.DoBloom(true);
         }
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
