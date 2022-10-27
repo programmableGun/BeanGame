@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\playerScripts\bloom.cs" />
     <Compile Include="Assets\scripts\obsticle.cs" />
+    <Compile Include="Assets\scripts\CleanUP.cs" />
     <Compile Include="Assets\scripts\spawnObsticles.cs" />
     <Compile Include="Assets\scripts\playerScripts\AudioManager.cs" />
     <Compile Include="Assets\README.cs" />
@@ -67,7 +68,6 @@
     <Compile Include="Assets\scripts\scoreManager.cs" />
     <Compile Include="Assets\scripts\playerScripts\player.cs" />
     <Compile Include="Assets\scripts\playerScripts\movement.cs" />
-    <Compile Include="Assets\scripts\CleanUP.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

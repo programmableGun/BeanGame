@@ -21,10 +21,14 @@ public class spawnObsticles : MonoBehaviour
     public void GenerateLevel(int level){
         scriptManager.parentOfClone = cloneHolder;
         int selector;
-        for (int i = 0; i < level + constantOffset;i++){
+        selector = 1; // should be defualt floor
+        spawnPointer.position = new Vector3(0f, 0f, 0 * Z_GeneratorOffset); // sets the spawn pointer to the center of the next spot
+        GameObject floorClone = Instantiate(floors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);
+
+        for (int i = 1; i < level + constantOffset;i++){
             selector = Random.Range(0, floors.Length);
             spawnPointer.position = new Vector3(0f,0f, i * Z_GeneratorOffset); // sets the spawn pointer to the center of the next spot
-            GameObject floorClone = Instantiate(floors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);
+            floorClone = Instantiate(floors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);
             spawnPointer.position = new Vector3(0f, floorClone.transform.localScale.y, spawnPointer.position.z);
             selector = Random.Range(0, obsitcles.Length);
             GameObject obsticleClone = Instantiate(obsitcles[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform); Debug.Log(spawnPointer.position.ToString());

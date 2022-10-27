@@ -35,6 +35,13 @@ public class movement : MonoBehaviour
                 canJump = false;
                 bloom.DoBloom(false);
             }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+
+                rb.AddForce(new Vector3(0f, -forceAmt, 0f));
+
+
+            }
             if (Input.GetKey(KeyCode.W))
             {
                 rb.AddForce(new Vector3(0f, 0f, forceAmt));
@@ -76,6 +83,8 @@ public class movement : MonoBehaviour
     public void resetPosition() {
         rb.gameObject.transform.position = new Vector3(0f, 10f, 0f);
         setVelocity(0, 3);
+        setVelocity(0, 2);
+        setVelocity(0, 1);
     }
     private void OnCollisionEnter(Collision collision)
     {

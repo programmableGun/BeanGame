@@ -9,6 +9,7 @@ public class player : MonoBehaviour
     public GameObject deadScreen;
     public ParticleSystem particle;
     public Slider progressBar;
+    public Slider currentPositionBar;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class player : MonoBehaviour
         scrManager.addScore(10);
         scrManager.addScore(20);
         progressBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
+        currentPositionBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class player : MonoBehaviour
             progressBar.value = maxZDistace;
             
         }
+        currentPositionBar.value = transform.position.z;
         
     }
     public void Die() {
