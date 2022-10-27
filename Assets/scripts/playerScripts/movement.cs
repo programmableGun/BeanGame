@@ -97,6 +97,7 @@ public class movement : MonoBehaviour
             nextLevelLocked = false;
             winScreen.SetActive(true);
             scriptManger.nextLevel();
+            resetPosition();
         }            
             
 

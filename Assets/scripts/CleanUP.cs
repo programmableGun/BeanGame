@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CleanUP : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //used to clean up the bits of bushes bean cans
     void Start()
     {
-        Destroy(this.gameObject, 3);
+        Destroy(this.gameObject, 3); 
     }
 
 

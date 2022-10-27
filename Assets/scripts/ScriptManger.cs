@@ -30,8 +30,15 @@ public class ScriptManger : MonoBehaviour
     }
     public void nextLevel() {
         level++;
-        Destroy(parentOfClone); //THIS DESTORYS THE PARENT, AND WILL NEED TO BE  FIXEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        cleanUpMap();
+        spawnObsticles.GenerateLevel(level);
         
+    }
+    void cleanUpMap(){
+         foreach (Transform child in parentOfClone.Transform)
+         {
+             Destroy(child.gameObject);
+         }
     }
    
 
