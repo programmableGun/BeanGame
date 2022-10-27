@@ -7,6 +7,7 @@ public class obsticle : MonoBehaviour
     public AudioManager audiomanager;
     public int type=0;
     public float rotationSpeed = 0.5f;
+    public GameObject destoryedVersion;
     public ParticleSystem explosionParticle;
     private void OnCollisionEnter(Collision obj)
     {
@@ -16,6 +17,7 @@ public class obsticle : MonoBehaviour
             obj.gameObject.GetComponent<player>().Die();
             audiomanager.playerDied.Play();
             Explode();
+            Instantiate(destoryedVersion, transform.position, transform.rotation);
         }
     }
 
