@@ -27,7 +27,7 @@ public class movement : MonoBehaviour
     public void onKeypressMove() {  // basic movement with a rigidbody
         if (controlsEnabled)
         {
-            if (Input.GetKey(KeyCode.UpArrow) && canJump)
+            if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)) && canJump)
             {
 
                 setVelocity(forceAmt * jumpMultiplyer, 2);
@@ -61,7 +61,7 @@ public class movement : MonoBehaviour
             }
         }
         else {
-            if (Input.GetKey(KeyCode.R) && nextLevelLocked)
+            if (Input.GetKey(KeyCode.R))
             { //press r to respawn
                 controlsEnabled = true;
                 resetPosition();
@@ -95,7 +95,7 @@ public class movement : MonoBehaviour
         }
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
-            winScreen.SetActive(true);
+            //winScreen.SetActive(true);
             scriptManger.nextLevel();
             resetPosition();
         }            

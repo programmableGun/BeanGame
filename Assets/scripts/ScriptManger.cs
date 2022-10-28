@@ -9,6 +9,7 @@ public class ScriptManger : MonoBehaviour
     //player scrips
     public movement playerMovement;
     public int level = 1;
+    public Text levelText;
     public GameObject parentOfClone;
     
 
@@ -23,6 +24,7 @@ public class ScriptManger : MonoBehaviour
     
     void FixedUpdate()
     {
+        
         playerMovement.onKeypressMove();
         playerMovement.CheckHasFallinToDeath();
         if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false);}
@@ -31,11 +33,12 @@ public class ScriptManger : MonoBehaviour
     public void nextLevel() {
         level++;
         cleanUpMap();
-        spawnObsticles.GenerateLevel(level);
+        levelText.text = "Level "+level;
         
+        obsticleSpawn.GenerateLevel(level);
     }
     void cleanUpMap(){
-         foreach (Transform child in parentOfClone.Transform)
+         foreach (Transform child in parentOfClone.transform)
          {
              Destroy(child.gameObject);
          }

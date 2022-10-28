@@ -25,7 +25,7 @@ public class spawnObsticles : MonoBehaviour
         spawnPointer.position = new Vector3(0f, 0f, 0 * Z_GeneratorOffset); // sets the spawn pointer to the center of the next spot
         GameObject floorClone = Instantiate(floors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);
 
-        for (int i = 1; i < level + constantOffset;i++){
+        for (int i = 1; i < level * constantOffset;i++){
             selector = Random.Range(0, floors.Length);
             spawnPointer.position = new Vector3(0f,0f, i * Z_GeneratorOffset); // sets the spawn pointer to the center of the next spot
             floorClone = Instantiate(floors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);

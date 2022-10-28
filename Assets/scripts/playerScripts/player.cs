@@ -32,7 +32,9 @@ public class player : MonoBehaviour
             maxZDistace = (int)this.gameObject.transform.position.z;
             scrManager.addScore(1);
             progressBar.value = maxZDistace;
-            
+            progressBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
+            currentPositionBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
+
         }
         currentPositionBar.value = transform.position.z;
         

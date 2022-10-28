@@ -111,6 +111,7 @@ MonoBehaviour:
   audiomanager: {fileID: 0}
   type: 0
   rotationSpeed: 0.01
+  destoryedVersion: {fileID: 4905301342104611441, guid: 7a8b30966892ebe4eb01680987a35175, type: 3}
   explosionParticle: {fileID: 0}
 --- !u!1 &5476740612893217618
 GameObject:
@@ -256,6 +257,7 @@ MonoBehaviour:
   audiomanager: {fileID: 0}
   type: 0
   rotationSpeed: 0.01
+  destoryedVersion: {fileID: 4905301342104611441, guid: 7a8b30966892ebe4eb01680987a35175, type: 3}
   explosionParticle: {fileID: 0}
 --- !u!1001 &4907292163872284194
 PrefabInstance:
