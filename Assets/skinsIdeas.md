@@ -1,29 +1,31 @@
-  Player Skins
+  #Skin Ideas
+  
+  ##Player Skins
 among us skin
 bannana skin
 bean with a smily face on it
 Mike Wazowski
 
-  Lava Skins
+  ##Lava Skins
 microwave
 cheese
 cameron's face
 Kermit the Frog
 
-  BeanCan Skins
+  ##BeanCan Skins
 can of whoop ass
 can of soup
 can of gold
 rusty can
 trash can
 
-  SkyBox Skins
+  ##SkyBox Skins
 Galaxy (defualt)
 Day
 Night
 picture of someones face
 shrek skin
 
-  Color Selection for Floor
+  ##Color Selection for Floor
   
    
