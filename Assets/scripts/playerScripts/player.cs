@@ -11,6 +11,7 @@ public class player : MonoBehaviour
     public Slider progressBar;
     public Slider currentPositionBar;
     
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -49,6 +49,35 @@ public class MenuScript : MonoBehaviour
         menuScreen.SetActive(false);
         skinsScreen.SetActive(true);
     }
+    public void onPlayerSkinChange(int index){
+        //get the player model
+
+        //get the player shader
+
+        //set the model to new index
+
+        //set the shader to the according skin
+   
+    }
+    public void onObsticleSkinChange(int index){
+        //get the obsticle model
+
+        //get the obsticle shader
+
+        //set the model to new index
+
+        //set the shader to the according skin
+    }
+    public void onPointBlockSkinChange(int index){
+        //get the pointBlock model
+
+        //get the pointBlock shader
+
+        //set the model to new index
+
+        //set the shader to the according skin
+    }
+    
     // what happends when the exit button is pressed
     public void OnExitButtonPressed(){
         Application.Quit(0); // this may be the wrong syntax
