@@ -1525,7 +1525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.0627451, g: 0.8117648, b: 0.89019614, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2780,13 +2780,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381774768}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.0627451, g: 0.8117648, b: 0.89019614, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3073,6 +3073,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5302822838008114962, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
       propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302822838008114963, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: m_Radius
+      value: 0.5333219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302822838008114963, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302822838008114963, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: m_Height
+      value: 2.0513415
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302822838008114963, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302822838008114963, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
+      propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5302822838008114965, guid: c612b2eaf95271a46900af968d33b8d7, type: 3}
@@ -3728,6 +3748,7 @@ MonoBehaviour:
   - {fileID: 5476740612893217618, guid: 1557285c0cf35d4499172af5da97de7d, type: 3}
   - {fileID: 5476740612893217618, guid: dc62199de132a2846b6b834440ec32bd, type: 3}
   - {fileID: 5476740612893217618, guid: d188eeb537e955e419c979289f66474e, type: 3}
+  - {fileID: 5476740612893217618, guid: 398d0f7debf864549aecacb134e6386d, type: 3}
   floors:
   - {fileID: 1372685191}
   - {fileID: 5311750090765525995, guid: f7f1c1fef0eca854598c3e5e886cbc40, type: 3}
