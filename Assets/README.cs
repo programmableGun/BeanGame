@@ -1,11 +1,12 @@
 /*
 
 menu
-
+Skins: make a screen that shows buttons for differnet objects, then
+make a slide bar that allows you to scroll through differerent screens
 
  Gameplay:
-make the touched lava explode when the player collides with it.
-when the player touches the end block the level increases
+ Make it so everytime you go up a level your maxZDistance score has a slight multiplyer on it
+
 
 
 */
