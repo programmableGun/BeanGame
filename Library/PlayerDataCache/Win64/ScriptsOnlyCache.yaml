@@ -29,10 +29,22 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+<<<<<<< Updated upstream
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+=======
+    - UnityEngine.UI.Dropdown
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
+>>>>>>> Stashed changes
   sceneClasses:
     Assets/scenes/runner.unity:
     - Class: 1
@@ -78,12 +90,22 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12116}
     - Class: 114
+<<<<<<< Updated upstream
+=======
+      Script: {instanceID: 12120}
+    - Class: 114
+>>>>>>> Stashed changes
       Script: {instanceID: 12164}
     - Class: 114
       Script: {instanceID: 12206}
     - Class: 114
       Script: {instanceID: 12568}
     - Class: 114
+<<<<<<< Updated upstream
+=======
+      Script: {instanceID: 12662}
+    - Class: 114
+>>>>>>> Stashed changes
       Script: {instanceID: 12792}
     - Class: 114
       Script: {instanceID: 12802}
@@ -92,6 +114,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12928}
     - Class: 114
+<<<<<<< Updated upstream
+=======
+      Script: {instanceID: 13160}
+    - Class: 114
+>>>>>>> Stashed changes
       Script: {instanceID: 13222}
     - Class: 114
       Script: {instanceID: 13494}
@@ -116,8 +143,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14760}
     - Class: 114
+<<<<<<< Updated upstream
       Script: {instanceID: 14932}
     - Class: 114
+=======
+      Script: {instanceID: 14908}
+    - Class: 114
+      Script: {instanceID: 14932}
+    - Class: 114
+      Script: {instanceID: 14964}
+    - Class: 114
+>>>>>>> Stashed changes
       Script: {instanceID: 15000}
     - Class: 114
       Script: {instanceID: 15050}
@@ -598,7 +634,11 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: c4614fe3c54b93d1cbb616465f87ba24
+=======
+      Hash: b96bf2751d36b932fdcc21d8dc760706
+>>>>>>> Stashed changes
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: player
@@ -622,7 +662,11 @@ ScriptsOnlyBuild:
     className: PostProcessVolume
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: b081a12c39eb77dea2340fd57c698603
+=======
+      Hash: b5d8662008cc1d5da4573d704b3f7d3c
+>>>>>>> Stashed changes
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: movement
@@ -730,7 +774,11 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+<<<<<<< Updated upstream
       Hash: 0db954f0d82b35fba549c724358e6795
+=======
+      Hash: cb20439c624a833f278edc3dfea715da
+>>>>>>> Stashed changes
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuScript
@@ -743,4 +791,8 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/scenes/runner.unity
+<<<<<<< Updated upstream
   playerPath: D:/UniteThePrograms/New Unity Project.exe
+=======
+  playerPath: D:/UniteThePrograms/build/New Unity Project.exe
+>>>>>>> Stashed changes

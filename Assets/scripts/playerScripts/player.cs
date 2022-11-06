@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class player : MonoBehaviour
 {
-    int maxZDistace = 0;
+    public int maxZDistace = 0;
     public scoreManager scrManager;
     public GameObject deadScreen;
     public ParticleSystem particle;
