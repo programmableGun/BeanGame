@@ -4875,7 +4875,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4942,15 +4942,11 @@ MonoBehaviour:
   rb: {fileID: 5302822838008114962}
   forceAmt: 300
   jumpMultiplyer: 1
-  canJump: 1
   winScreen: {fileID: 0}
   audioManager: {fileID: 0}
   bloom: {fileID: 0}
-  menuScript: {fileID: 0}
   scrManager: {fileID: 0}
-  scriptManger: {fileID: 0}
   controlsEnabled: 1
-  nextLevelLocked: 1
 --- !u!1 &5302822838789321173
 GameObject:
   m_ObjectHideFlags: 0

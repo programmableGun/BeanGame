@@ -34,31 +34,10 @@ public class spawnObsticles : MonoBehaviour
             GameObject obsticleClone = Instantiate(obsitcles[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform); Debug.Log(spawnPointer.position.ToString());
 
         }
-<<<<<<< Updated upstream
         EndingBlock.transform.position = new Vector3(0f, 0f, spawnPointer.position.z + constantOffset);
         GameObject.FindGameObjectWithTag("Player").GetComponent<player>().progressBar.maxValue = EndingBlock.transform.position.z - EndingBlock.transform.localScale.z;
 
         
-=======
-<<<<<<< Updated upstream
-    }
-    void setRandomSize(int widthMax, int heightMax, GameObject obj) { 
-        obj.transform.localScale = new Vector3((float)Random.Range(2, widthMax), //x
-            (float)Random.Range(2, heightMax),  //y
-            (float)Random.Range(2, 30)); //z
-    }
-    private void setRandomLocation(int section, GameObject obj) {
-        obj.transform.position = new Vector3((float)Random.Range(-randomPostionX_max, randomPostionX_max), //x
-            (float)Random.Range(-8,randomPostionY_max),  //y
-            (float)Random.Range(section,section+30)); //z
-=======
-        EndingBlock.transform.position = new Vector3(0f, 0f, spawnPointer.position.z + constantOffset);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<player>().maxZDistace = 0;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<player>().progressBar.maxValue = GameObject.FindGameObjectWithTag("Player").GetComponent<player>().maxZDistace;
-
-        
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     }
     
 }

@@ -15,8 +15,8 @@ public class movement : MonoBehaviour
     public AudioManager audioManager;
 
     public bloom bloom;
+    
 
-    public MenuScript menuScript;
     public scoreManager scrManager;
     public ScriptManger scriptManger;
 
@@ -59,17 +59,12 @@ public class movement : MonoBehaviour
             {
                 rb.AddForce(new Vector3(forceAmt, 0f, 0f));
             }
-            if (Input.GetKey(KeyCode.Escape)) {
-                menuScript.OnPauseButtonPressed();   
-            }
         }
         else {
             if (Input.GetKey(KeyCode.R))
             { //press r to respawn
                 controlsEnabled = true;
                 resetPosition();
-                canJump = true;
-                bloom.DoBloom(true);
                 GetComponent<player>().deadScreen.SetActive(false);
                 GetComponent<player>().particle.Stop();
                 scrManager.resetCombo();
@@ -100,22 +95,9 @@ public class movement : MonoBehaviour
         }
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
-<<<<<<< Updated upstream
             //winScreen.SetActive(true);
             scriptManger.nextLevel();
             resetPosition();
-=======
-<<<<<<< Updated upstream
-            winScreen.SetActive(true);
-            scrManager.nextLevel();
-=======
-            //winScreen.SetActive(true);
-            canJump = true;
-            bloom.DoBloom(true);
-            scriptManger.nextLevel();
-            resetPosition();
->>>>>>> Stashed changes
->>>>>>> Stashed changes
         }            
             
 
