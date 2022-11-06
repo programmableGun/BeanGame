@@ -8,32 +8,40 @@ public class ScriptManger : MonoBehaviour
     public spawnObsticles obsticleSpawn;
     //player scrips
     public movement playerMovement;
-
-    
+    public int level = 1;
+    public Text levelText;
+    public GameObject parentOfClone;
     
 
     void Start()
     {
-        obsticleSpawn.startCloning(200, obsticleSpawn.pointCube);
-        obsticleSpawn.randomPostionY_max = 80;obsticleSpawn.randomPostionX_max = 32;
-        obsticleSpawn.startCloning(200, obsticleSpawn.obsticle);
-        obsticleSpawn.startCloning(200, obsticleSpawn.obsticle);
-        obsticleSpawn.randomPostionY_max = 150; obsticleSpawn.randomPostionX_max = 64;
-        obsticleSpawn.startCloning(200, obsticleSpawn.obsticle);
+        obsticleSpawn.GenerateLevel(level);
         playerMovement.winScreen.SetActive(false);
         playerMovement.setVelocity(20, 3);
+        
     }
 
     
     void FixedUpdate()
     {
+        
         playerMovement.onKeypressMove();
         playerMovement.CheckHasFallinToDeath();
         if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false);}
 
     }
     public void nextLevel() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("runner");
+        level++;
+        cleanUpMap();
+        levelText.text = "Level "+level;
+        
+        obsticleSpawn.GenerateLevel(level);
+    }
+    void cleanUpMap(){
+         foreach (Transform child in parentOfClone.transform)
+         {
+             Destroy(child.gameObject);
+         }
     }
    
 

@@ -7,6 +7,7 @@ public class scoreManager : MonoBehaviour
     public int score = 0;
     [SerializeField]
     public int combo = 0;
+
     public Text scoreText;
     public Text comboText;
 
@@ -33,6 +34,6 @@ public class scoreManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
     public void updateComboText(){
-        comboText.text = combo.ToString();
+        comboText.text = combo + "x";
     }
 }

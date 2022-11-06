@@ -8,6 +8,7 @@ public class pointCube : MonoBehaviour
 
     public Renderer rend;
     public AudioManager audioManager;
+    public GameObject destoryedVersion;
     private int type;
     private float rotationSpeed;
 
@@ -15,6 +16,21 @@ public class pointCube : MonoBehaviour
     {
         type = Random.Range(0, 4);
         rotationSpeed = Random.Range(-0.1f, 0.1f);
+<<<<<<< Updated upstream
+        audioManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
+        scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
+=======
+<<<<<<< Updated upstream
+=======
+        audioManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
+        scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
+        GetComponent<MeshRenderer>().materials[0] = GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeSkin[GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeSelected];
+        GetComponent<MeshFilter>().mesh = GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeMesh[GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeSelected];
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     }
 
     private void Update()
@@ -29,15 +45,17 @@ public class pointCube : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name.Equals("bean"))
+        if (other.gameObject.name.Equals("bean"))
         {
             scrManager.combo++;
             scrManager.updateComboText();
             scrManager.addScore(150);
             comboSoundEffect();
-
+            other.gameObject.GetComponent<movement>().canJump = true;
+            other.gameObject.GetComponent<movement>().bloom.DoBloom(true);
+            Instantiate(destoryedVersion, transform.position, transform.rotation);
             Destroy(this.gameObject);
 
         }

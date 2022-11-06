@@ -9,14 +9,14 @@ public class movement : MonoBehaviour
     public float forceAmt = 300f;
     public float jumpMultiplyer = 1f;
     private float velocity = 0f;
-    private bool canJump = true;
+    public bool canJump = true;
 
     public GameObject winScreen;
     public AudioManager audioManager;
 
     public bloom bloom;
-    
 
+    public MenuScript menuScript;
     public scoreManager scrManager;
     public ScriptManger scriptManger;
 
@@ -27,13 +27,20 @@ public class movement : MonoBehaviour
     public void onKeypressMove() {  // basic movement with a rigidbody
         if (controlsEnabled)
         {
-            if (Input.GetKey(KeyCode.UpArrow) && canJump)
+            if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)) && canJump)
             {
 
                 setVelocity(forceAmt * jumpMultiplyer, 2);
                 audioManager.playerJump.Play();
                 canJump = false;
                 bloom.DoBloom(false);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+
+                rb.AddForce(new Vector3(0f, -forceAmt, 0f));
+
+
             }
             if (Input.GetKey(KeyCode.W))
             {
@@ -52,21 +59,22 @@ public class movement : MonoBehaviour
             {
                 rb.AddForce(new Vector3(forceAmt, 0f, 0f));
             }
+            if (Input.GetKey(KeyCode.Escape)) {
+                menuScript.OnPauseButtonPressed();   
+            }
         }
         else {
-            if (Input.GetKey(KeyCode.R) && nextLevelLocked)
+            if (Input.GetKey(KeyCode.R))
             { //press r to respawn
                 controlsEnabled = true;
                 resetPosition();
+                canJump = true;
+                bloom.DoBloom(true);
                 GetComponent<player>().deadScreen.SetActive(false);
                 GetComponent<player>().particle.Stop();
                 scrManager.resetCombo();
             }
-            else if(Input.GetKey(KeyCode.R) && !nextLevelLocked) {
-                Debug.Log("next level called");
-                nextLevelLocked = true;
-                ScriptManger.nextLevel();
-            }
+            
         }
     }
 
@@ -80,6 +88,8 @@ public class movement : MonoBehaviour
     public void resetPosition() {
         rb.gameObject.transform.position = new Vector3(0f, 10f, 0f);
         setVelocity(0, 3);
+        setVelocity(0, 2);
+        setVelocity(0, 1);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -88,14 +98,24 @@ public class movement : MonoBehaviour
             bloom.DoBloom(true);
             scrManager.resetCombo();
         }
-        if (collision.gameObject.tag.Equals("pointBlock")) {
-            canJump = true;
-            bloom.DoBloom(true);
-        }
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
+<<<<<<< Updated upstream
+            //winScreen.SetActive(true);
+            scriptManger.nextLevel();
+            resetPosition();
+=======
+<<<<<<< Updated upstream
             winScreen.SetActive(true);
             scrManager.nextLevel();
+=======
+            //winScreen.SetActive(true);
+            canJump = true;
+            bloom.DoBloom(true);
+            scriptManger.nextLevel();
+            resetPosition();
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         }            
             
 

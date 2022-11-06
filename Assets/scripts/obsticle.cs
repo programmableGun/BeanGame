@@ -7,22 +7,38 @@ public class obsticle : MonoBehaviour
     public AudioManager audiomanager;
     public int type=0;
     public float rotationSpeed = 0.5f;
-
+    public GameObject destoryedVersion;
+    public ParticleSystem explosionParticle;
     private void OnCollisionEnter(Collision obj)
     {
-        Debug.Log(obj.gameObject.name);
-        audiomanager.playerDied.Play();
+        
+     
         if (obj.gameObject.name.Equals("bean")) {
             obj.gameObject.GetComponent<player>().Die();
+            audiomanager.playerDied.Play();
+            Explode();
+            Instantiate(destoryedVersion, transform.position, transform.rotation);
         }
     }
 
     private void Start()
     {
         type = Random.Range(0, 4);
+<<<<<<< Updated upstream
+        audiomanager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
+=======
+<<<<<<< Updated upstream
 
+=======
+        audiomanager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
+        GetComponent<MeshRenderer>().materials[0] = GameObject.Find("Canvas").GetComponent<MenuScript>().obsticleSkins[GameObject.Find("Canvas").GetComponent<MenuScript>().obsticleSkinSelected];
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     }
-
+    
     private void Update()
     {
         if (type == 1) {
@@ -33,4 +49,20 @@ public class obsticle : MonoBehaviour
             this.gameObject.transform.Rotate(new Vector3(rotationSpeed, rotationSpeed, 0f));
         }
     }
+<<<<<<< Updated upstream
+    private void Explode(){
+        //explosionParticle.Play();
+    }
+=======
+<<<<<<< Updated upstream
+=======
+    private void Explode(){
+        //explosionParticle.Play();
+    }
+    
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }

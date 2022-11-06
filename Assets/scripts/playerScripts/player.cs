@@ -1,19 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class player : MonoBehaviour
 {
-    int maxZDistace = 0;
+    public int maxZDistace = 0;
     public scoreManager scrManager;
     public GameObject deadScreen;
     public ParticleSystem particle;
+    public Slider progressBar;
+    public Slider currentPositionBar;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         maxZDistace = (int)this.gameObject.transform.position.z;
         scrManager.addScore(10);
         scrManager.addScore(20);
+        progressBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
+        currentPositionBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
     }
 
     // Update is called once per frame
@@ -26,7 +32,12 @@ public class player : MonoBehaviour
         {
             maxZDistace = (int)this.gameObject.transform.position.z;
             scrManager.addScore(1);
+            progressBar.value = maxZDistace;
+            progressBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
+            currentPositionBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
+
         }
+        currentPositionBar.value = transform.position.z;
         
     }
     public void Die() {
@@ -36,8 +47,8 @@ public class player : MonoBehaviour
         // show a respawn screen
         deadScreen.SetActive(true);
 
-        // play death effect
-        particle.Play();
+        // Explode
+        //particle.Play();
         // wait for the player to press r >> this gets detected in movement.cs
 
         
