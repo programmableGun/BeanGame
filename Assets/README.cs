@@ -7,6 +7,7 @@ make a slide bar that allows you to scroll through differerent screens
  Gameplay:
  Make it so everytime you go up a level your maxZDistance score has a slight multiplyer on it
 
-
+Skins:
+make a clone of a prefab with the skin selected, Make PREFABS of PLAYER
 
 */
