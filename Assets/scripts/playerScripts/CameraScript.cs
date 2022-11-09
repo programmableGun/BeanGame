@@ -19,6 +19,6 @@ public class CameraScript : MonoBehaviour
     {
         gameObject.transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y + offset, playerTransform.position.z - offset);
         gameObject.transform.eulerAngles = new Vector3(20f,0f,0f);
-        RenderSettings.skybox.SetFloat("_Rotation",Time.time*skyboxRotationSpeed);
+        //RenderSettings.skybox.SetFloat("_Rotation",Time.time*skyboxRotationSpeed);
     }
 }

@@ -11,4 +11,12 @@ public class AudioManager : MonoBehaviour
     public AudioSource playerJump;
 
     public float[] comboSfxPitch;
+
+    void Start()
+    {
+        audioListener = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioListener>();
+        pointScored = GameObject.Find("PointsSound").GetComponent<AudioSource>();
+        playerDied = GameObject.Find("DeathSound").GetComponent<AudioSource>();
+        playerJump = GameObject.Find("JumpSound").GetComponent<AudioSource>();
+    }
 }

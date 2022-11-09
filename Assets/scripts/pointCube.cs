@@ -16,8 +16,12 @@ public class pointCube : MonoBehaviour
     {
         type = Random.Range(0, 4);
         rotationSpeed = Random.Range(-0.1f, 0.1f);
+
         audioManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
         scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
+       // GetComponent<MeshRenderer>().materials[0] = GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeSkin[GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeSelected];
+       // GetComponent<MeshFilter>().mesh = GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeMesh[GameObject.Find("Canvas").GetComponent<MenuScript>().pointCubeSelected];
+
     }
 
     private void Update()

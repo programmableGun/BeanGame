@@ -8,6 +8,7 @@ TagManager:
   - pointBlock
   - endingBlock
   - mainScript
+  - canvas
   layers:
   - Default
   - TransparentFX

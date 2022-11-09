@@ -11,7 +11,7 @@ public class spawnObsticles : MonoBehaviour
     [Header("")]
     [Header("")]
     public GameObject EndingBlock;
-
+       
     public int Z_GeneratorOffset;
     public Transform spawnPointer;  //shows the generator where to instaniate the chunks of the level;
     public ScriptManger scriptManager;
@@ -34,10 +34,18 @@ public class spawnObsticles : MonoBehaviour
             GameObject obsticleClone = Instantiate(obsitcles[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform); Debug.Log(spawnPointer.position.ToString());
 
         }
+
         EndingBlock.transform.position = new Vector3(0f, 0f, spawnPointer.position.z + constantOffset);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<player>().progressBar.maxValue = EndingBlock.transform.position.z - EndingBlock.transform.localScale.z;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<player>().maxZDistace = 0;
+        GameObject.FindGameObjectWithTag("Player"). 
+            GetComponent<player>().progressBar.maxValue = 
+            GameObject.FindGameObjectWithTag("Player").GetComponent<player>().maxZDistace;
+    }
+    
 
         
-    }
+
+
+    
     
 }

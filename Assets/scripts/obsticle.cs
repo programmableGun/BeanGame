@@ -24,7 +24,14 @@ public class obsticle : MonoBehaviour
     private void Start()
     {
         type = Random.Range(0, 4);
+
+
         audiomanager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
+        //GetComponent<MeshRenderer>().materials[0] = GameObject.Find("Canvas").GetComponent<MenuScript>().obsticleSkins[GameObject.Find("Canvas").GetComponent<MenuScript>().obsticleSkinSelected];
+
+
+
+
     }
     
     private void Update()
@@ -37,6 +44,8 @@ public class obsticle : MonoBehaviour
             this.gameObject.transform.Rotate(new Vector3(rotationSpeed, rotationSpeed, 0f));
         }
     }
+
+
     private void Explode(){
         //explosionParticle.Play();
     }
