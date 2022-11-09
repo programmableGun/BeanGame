@@ -11,7 +11,7 @@ public class movement : MonoBehaviour
     private float velocity = 0f;
     public bool canJump = true;
 
-    public GameObject winScreen;
+    //public GameObject winScreen;
     public AudioManager audioManager;
 
     public bloom bloom;
@@ -22,7 +22,18 @@ public class movement : MonoBehaviour
 
     public bool controlsEnabled = true;
     public bool nextLevelLocked = true;
-
+    
+    void Start()
+    {
+        // assign stuff
+        
+        audioManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<AudioManager>();
+        bloom = GameObject.Find("bloom").GetComponent<bloom>();
+        menuScript = GameObject.FindGameObjectWithTag("canvas").GetComponent<MenuScript>();
+        scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
+        scriptManger = GameObject.FindGameObjectWithTag("mainScript").GetComponent<ScriptManger>();
+        
+    }
     //this is starting to become speghetti code and i want to fix it
     public void onKeypressMove() {  // basic movement with a rigidbody
         if (controlsEnabled)
@@ -70,7 +81,7 @@ public class movement : MonoBehaviour
                 resetPosition();
                 canJump = true;
                 bloom.DoBloom(true);
-                GetComponent<player>().deadScreen.SetActive(false);
+                GetComponent<player>().deadScreen.gameObject.SetActive(false);
                 GetComponent<player>().particle.Stop();
                 scrManager.resetCombo();
             }
@@ -100,22 +111,13 @@ public class movement : MonoBehaviour
         }
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
-<<<<<<< Updated upstream
-            //winScreen.SetActive(true);
-            scriptManger.nextLevel();
-            resetPosition();
-=======
-<<<<<<< Updated upstream
-            winScreen.SetActive(true);
-            scrManager.nextLevel();
-=======
+
             //winScreen.SetActive(true);
             canJump = true;
             bloom.DoBloom(true);
             scriptManger.nextLevel();
             resetPosition();
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+
         }            
             
 

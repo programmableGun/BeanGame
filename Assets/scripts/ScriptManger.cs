@@ -11,12 +11,19 @@ public class ScriptManger : MonoBehaviour
     public int level = 1;
     public Text levelText;
     public GameObject parentOfClone;
+    public GameObject parentOfPlayer; public static int playerskinSelected;
+    public Skins skins;
     
 
     void Start()
     {
+        //make the player
+        Instantiate(skins.playerSkins[Skins.playerSkinSelected], parentOfPlayer.transform);
+        //assign player scripts
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<movement>();
+        //normal stuff
         obsticleSpawn.GenerateLevel(level);
-        playerMovement.winScreen.SetActive(false);
+        //playerMovement.winScreen.SetActive(false);
         playerMovement.setVelocity(20, 3);
         
     }
@@ -27,7 +34,7 @@ public class ScriptManger : MonoBehaviour
         
         playerMovement.onKeypressMove();
         playerMovement.CheckHasFallinToDeath();
-        if (Input.GetKeyDown(KeyCode.P)) { playerMovement.winScreen.SetActive(false);}
+        
 
     }
     public void nextLevel() {

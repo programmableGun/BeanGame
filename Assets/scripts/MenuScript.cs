@@ -1,39 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-<<<<<<< Updated upstream
-using UnityEngine;
-=======
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
->>>>>>> Stashed changes
 
 public class MenuScript : MonoBehaviour
 {
-    public ScriptManger scriptManager;
+    //public ScriptManger scriptManager;
+    
+    public Skins skins;
+
     [Header("Menu Screens")]
     public GameObject menuScreen;
     public GameObject settingsScreen;
     public GameObject skinsScreen;
     public GameObject pauseMenu;
-<<<<<<< Updated upstream
     
-    
-=======
-
-    [Header("Menu Stuff")]
+    [Header("Settings Stuff")]
     public Dropdown resolutionMenu;
     public Toggle fullScreenToggle;
-    [Header("Player Skins")]
-    public Material[] playerSkins; public Mesh[] playerMesh; public int playerSkinSelected = 0;
-    [Header("Obsticle Skins")]
-    public Material[] obsticleSkins; public Mesh[] obsticleMesh; public int obsticleSkinSelected = 0;
-    [Header("pointCube Skins")]
-    public Material[] pointCubeSkin; public Mesh[] pointCubeMesh; public int pointCubeSelected = 0;
-    [Header("Floor Skins")]
-    public Material[] floorSkin; 
->>>>>>> Stashed changes
 
+    [Header("Player Skins")]
+    public Dropdown playerSkinsDropDown; public  GameObject[] playerSkins; public int playerSkinSelected = 0;
+    
+
+    
     // what happends when the pause button is pressed
     public void OnPauseButtonPressed(){
         pauseMenu.SetActive(true);
@@ -43,9 +34,7 @@ public class MenuScript : MonoBehaviour
     }
     // what happends when the play button is pressed
     public void OnPlayButtonPressed(){
-        settingsScreen.SetActive(false);
-        menuScreen.SetActive(false);
-        skinsScreen.SetActive(false);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("runner");
     }
 
     //what happends when the settings button is pressed
@@ -54,18 +43,6 @@ public class MenuScript : MonoBehaviour
         menuScreen.SetActive(false);
         skinsScreen.SetActive(false);
     }
-<<<<<<< Updated upstream
-    
-    public void OnResolutionChange(int index){ // prints the currently available 
-        Resolution[] resolutions = Screen.resolutions;
-        // Print the resolutions
-        foreach (var res in resolutions)
-        {
-            Debug.Log(res.width + "x" + res.height + " : " + res.refreshRate);
-        }
-    }
-
-=======
     public void OnMainMenuButtonPressed()
     {
         settingsScreen.SetActive(false);
@@ -88,53 +65,31 @@ public class MenuScript : MonoBehaviour
         }
         resolutionMenu.AddOptions(listOfResolutions);
     }
-   
->>>>>>> Stashed changes
+    public void FillPlayerSkinDropDown()
+    {
+
+        skins.setSkins(playerSkins);
+        List<string> listOfSkins = new List<string>();
+        // fill drop down with skins from skins script
+        for (int i = 0; i < playerSkins.Length; i++)
+        {
+            listOfSkins.Add(playerSkins[i].name);
+            Debug.Log("Skin " + i + ": " +skins.getSkin(i).name);
+        }
+        playerSkinsDropDown.AddOptions(listOfSkins);
+
+    }
+
     //what happends when the skins button is pressed
     public void OnSkinButtonPressed(){
         settingsScreen.SetActive(false);
         menuScreen.SetActive(false);
         skinsScreen.SetActive(true);
     }
-    public void onPlayerSkinChange(int index){
-<<<<<<< Updated upstream
-        //get the player model
-
-        //get the player shader
-
-        //set the model to new index
-
-        //set the shader to the according skin
-   
-=======
-        //get list of player skins from material folder
-
-        //set the model to new index
-        //scriptManager.playerMovement.GetComponent<MeshFilter>().mesh = playerMesh[index];
-        //set the shader to the according skin
-        //scriptManager.playerMovement.GetComponent<MeshRenderer>().materials[0] = playerSkins[index];
-
-        if (index == 0)
-        {
-            scriptManager.playerMovement.GetComponent<MeshRenderer>().material.color = new Color(1f,0,0);
-        }
-        else if (index == 1)
-        {
-            scriptManager.playerMovement.GetComponent<MeshRenderer>().material.color = new Color(0f, 1f, 0f);
-        }
-        else if (index == 2) {
-            scriptManager.playerMovement.GetComponent<MeshRenderer>().material.color = new Color(.75f, .65f, .75f);
-        }
-        else if (index == 3)
-        {
-            scriptManager.playerMovement.GetComponent<MeshRenderer>().material.color = new Color(0f, 0f, 0f);
-        }
-        else if (index == 4)
-        {
-            scriptManager.playerMovement.GetComponent<MeshRenderer>().material.color = new Color(.58f, .35f, 1f);
-        }
-
->>>>>>> Stashed changes
+    public static void onPlayerSkinChange(int index)
+    {
+        ScriptManger.playerskinSelected = index;
+        Skins.playerSkinSelected = index;
     }
     public void onObsticleSkinChange(int index){
         //get the obsticle model
@@ -157,22 +112,16 @@ public class MenuScript : MonoBehaviour
     
     // what happends when the exit button is pressed
     public void OnExitButtonPressed(){
-<<<<<<< Updated upstream
-        Application.Quit(0); // this may be the wrong syntax
-=======
         Application.Quit(0); // this may be the wrong syntax : this is the right syntax;
 
->>>>>>> Stashed changes
     }
 
     void Start(){
         settingsScreen.SetActive(false);
         menuScreen.SetActive(true);
         skinsScreen.SetActive(false);
-<<<<<<< Updated upstream
-=======
         FillResolutionDropDown();
->>>>>>> Stashed changes
+        FillPlayerSkinDropDown();
     }
 
 }

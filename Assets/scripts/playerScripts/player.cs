@@ -5,16 +5,28 @@ using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     public int maxZDistace = 0;
-    public scoreManager scrManager;
-    public GameObject deadScreen;
     public ParticleSystem particle;
-    public Slider progressBar;
+
+    public scoreManager scrManager;
+    public Image deadScreen;
+    public Slider progressBar; //aka max slider
     public Slider currentPositionBar;
     
     
     // Start is called before the first frame update
     void Start()
     {
+
+        //finds all the gameobjects for scripts
+        scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
+        deadScreen = GameObject.Find("DeadScreen").GetComponent<Image>(); //broken
+        progressBar = GameObject.Find("maxDistanceSlider").GetComponent<Slider>();
+        currentPositionBar = GameObject.Find("CurrentDistance").GetComponent<Slider>();
+        deadScreen.gameObject.SetActive(false);
+        
+
+        //normal stuff
+
         maxZDistace = (int)this.gameObject.transform.position.z;
         scrManager.addScore(10);
         scrManager.addScore(20);
@@ -45,7 +57,7 @@ public class player : MonoBehaviour
         //lose control of player
         GetComponent<movement>().controlsEnabled = false;
         // show a respawn screen
-        deadScreen.SetActive(true);
+        deadScreen.gameObject.SetActive(true);
 
         // Explode
         //particle.Play();
