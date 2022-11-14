@@ -9,6 +9,8 @@ TagManager:
   - endingBlock
   - mainScript
   - canvas
+  - SoundEffect
+  - Music
   layers:
   - Default
   - TransparentFX
