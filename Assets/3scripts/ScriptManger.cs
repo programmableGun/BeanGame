@@ -8,7 +8,7 @@ public class ScriptManger : MonoBehaviour
     public spawnObsticles obsticleSpawn;
     //player scrips
     public movement playerMovement;
-    public int level = 1;
+    public static int level = 1;
     public int velocityCombo = 1;
     public Text levelText;
     public GameObject parentOfClone;

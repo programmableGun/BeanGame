@@ -26,7 +26,7 @@ public class scoreManager : MonoBehaviour
     }
     public void addScore(int amt)
     {
-        score += (int)(amt*(combo + 1) + (gameObject.GetComponent<ScriptManger>().level * gameObject.GetComponent<ScriptManger>().velocityCombo * 1.5));
+        score += (int)(amt*(combo + 1) + (ScriptManger.level * gameObject.GetComponent<ScriptManger>().velocityCombo * 1.5));
         
         setScore(score);
     }

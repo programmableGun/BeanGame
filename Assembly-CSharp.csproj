@@ -72,6 +72,8 @@
     <Compile Include="Assets\3scripts\playerScripts\player.cs" />
     <Compile Include="Assets\3scripts\playerScripts\movement.cs" />
     <Compile Include="Assets\3scripts\MenuScript.cs" />
+    <Compile Include="Assets\3scripts\BeanBoss.cs" />
+    <Compile Include="Assets\3scripts\beanMissile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

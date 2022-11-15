@@ -32,6 +32,7 @@ public class movement : MonoBehaviour
         menuScript = GameObject.FindGameObjectWithTag("canvas").GetComponent<MenuScript>();
         scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
         scriptManger = GameObject.FindGameObjectWithTag("mainScript").GetComponent<ScriptManger>();
+        resetPosition(); // puts bean over the spawn pad
         
     }
     //this is starting to become speghetti code and i want to fix it

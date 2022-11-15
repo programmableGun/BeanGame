@@ -11,6 +11,8 @@ TagManager:
   - canvas
   - SoundEffect
   - Music
+  - Boss
+  - beanMissile
   layers:
   - Default
   - TransparentFX
