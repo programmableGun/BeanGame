@@ -19,6 +19,7 @@ public class movement : MonoBehaviour
     public MenuScript menuScript;
     public scoreManager scrManager;
     public ScriptManger scriptManger;
+    public PowerUpHandler powerUpHandler;
     
     public bool controlsEnabled = true;
     public bool nextLevelLocked = true;
@@ -32,6 +33,7 @@ public class movement : MonoBehaviour
         menuScript = GameObject.FindGameObjectWithTag("canvas").GetComponent<MenuScript>();
         scrManager = GameObject.FindGameObjectWithTag("mainScript").GetComponent<scoreManager>();
         scriptManger = GameObject.FindGameObjectWithTag("mainScript").GetComponent<ScriptManger>();
+        powerUpHandler = GameObject.FindGameObjectWithTag("mainScript").GetComponent<PowerUpHandler>();
         resetPosition(); // puts bean over the spawn pad
         
     }
@@ -72,6 +74,10 @@ public class movement : MonoBehaviour
             if (Input.GetKey(KeyCode.D))
             {
                 rb.AddForce(new Vector3(forceAmt, 0f, 0f));
+            }
+            if (Input.GetKeyDown(KeyCode.E)) {
+                //run power up
+                powerUpHandler.usePowerup();
             }
 
         }

@@ -30,8 +30,14 @@ public class CameraScript : MonoBehaviour
 
     void CameraLogic() {
 
-     // if there is no boss than set camera mode for the runner scene
-     gameObject.transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y + offset, playerTransform.position.z - offset);
-     gameObject.transform.eulerAngles = new Vector3(20f, 0f, 0f);
+        // if there is no boss than set camera mode for the runner scene
+        if (!beanBoss)
+        {
+            gameObject.transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y + offset, playerTransform.position.z - offset);
+            gameObject.transform.eulerAngles = new Vector3(20f, 0f, 0f);
+        }
+        else {  // but if there is a boss enable mouse look basicly
+            //if(Input)
+        }
     }
 }

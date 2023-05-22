@@ -63,6 +63,8 @@
     <Compile Include="Assets\3scripts\spawnObsticles.cs" />
     <Compile Include="Assets\3scripts\playerScripts\AudioManager.cs" />
     <Compile Include="Assets\README.cs" />
+    <Compile Include="Assets\3scripts\BeanBoss.cs" />
+    <Compile Include="Assets\3scripts\beanMissile.cs" />
     <Compile Include="Assets\3scripts\playerScripts\CameraScript.cs" />
     <Compile Include="Assets\3scripts\ScriptManger.cs" />
     <Compile Include="Assets\3scripts\beanBits.cs" />
@@ -72,8 +74,9 @@
     <Compile Include="Assets\3scripts\playerScripts\player.cs" />
     <Compile Include="Assets\3scripts\playerScripts\movement.cs" />
     <Compile Include="Assets\3scripts\MenuScript.cs" />
-    <Compile Include="Assets\3scripts\BeanBoss.cs" />
-    <Compile Include="Assets\3scripts\beanMissile.cs" />
+    <Compile Include="Assets\3scripts\powerups\IPowerUps.cs" />
+    <Compile Include="Assets\3scripts\powerups\Multiplier.cs" />
+    <Compile Include="Assets\3scripts\powerups\PowerUpHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

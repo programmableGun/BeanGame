@@ -116,6 +116,11 @@ public class ScriptManger : MonoBehaviour
         {
             musicObject.GetComponent<AudioSource>().volume = PlayerSettings.musicVolume;
         }
+        foreach (GameObject musicSpeedObject in GameObject.FindGameObjectsWithTag("speedMusic"))
+        {
+            musicSpeedObject.GetComponent<AudioSource>().volume = PlayerSettings.speedMusicVolume;
+            Debug.Log("Setting MUSIC SPEED OBJECT to " + PlayerSettings.speedMusicVolume);
+        }
 
     }
 }

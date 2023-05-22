@@ -47,22 +47,22 @@ public class spawnObsticles : MonoBehaviour
 
             }
         }
-        else if (level == 4) { // medium level generation WITH BEAN BOSS
+        //else if (level == 4) { // medium level generation WITH BEAN BOSS
             
-            for (int i = 1; i < level * constantOffset; i++)
-            {
-                selector = Random.Range(0, mediumFloors.Length);
-                spawnPointer.position = new Vector3(0f, 0f, i * Z_GeneratorOffset); // sets the spawn pointer to the center of the next spot
-                if (i == bossOffSet) {summonBeanBoss(spawnPointer);}
-                floorClone = Instantiate(mediumFloors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);
-                spawnPointer.position = new Vector3(0f, floorClone.transform.localScale.y, spawnPointer.position.z);
-                selector = Random.Range(0, mediumObsitcles.Length);
-                GameObject obsticleClone = Instantiate(mediumObsitcles[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform); Debug.Log(spawnPointer.position.ToString());
+        //    for (int i = 1; i < level * constantOffset; i++)
+        //    {
+        //        selector = Random.Range(0, mediumFloors.Length);
+        //        spawnPointer.position = new Vector3(0f, 0f, i * Z_GeneratorOffset); // sets the spawn pointer to the center of the next spot
+        //        if (i == bossOffSet) {summonBeanBoss(spawnPointer);}
+        //        floorClone = Instantiate(mediumFloors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);
+        //        spawnPointer.position = new Vector3(0f, floorClone.transform.localScale.y, spawnPointer.position.z);
+        //        selector = Random.Range(0, mediumObsitcles.Length);
+        //        GameObject obsticleClone = Instantiate(mediumObsitcles[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform); Debug.Log(spawnPointer.position.ToString());
 
 
-            }
-        }
-        else if (level < 4)
+        //    }
+        //}
+        else if (level < 3)
         {  // medium level generation
             for (int i = 1; i < level * constantOffset; i++)
             {

@@ -13,6 +13,8 @@ TagManager:
   - Music
   - Boss
   - beanMissile
+  - speedMusic
+  - powerup
   layers:
   - Default
   - TransparentFX

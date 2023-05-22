@@ -32,6 +32,11 @@ public class MenuScript : MonoBehaviour
     {
         PlayerSettings.musicVolume = val;
     }
+    public void changeSpeedVolume(float val)
+    {
+        PlayerSettings.speedMusicVolume = val;
+        Debug.Log(PlayerSettings.speedMusicVolume);
+    }
     public void changeSfxVolume(float val)
     {
         PlayerSettings.sfxVolume = val;

@@ -9,6 +9,8 @@ public class PlayerSettings : MonoBehaviour
     public static bool isPointCubeCollisionOn = false;
     public static float musicVolume = 1;
     public static float sfxVolume = 1;
+    public static float speedMusicVolume = 1;
+    public static float mouseSensitivity = 1; 
     [Header("Player Skins")]
     public GameObject[] playerSkins; public static int playerSkinSelected = 0;
 
