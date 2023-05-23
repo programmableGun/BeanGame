@@ -15,6 +15,7 @@ public class spawnObsticles : MonoBehaviour
     public GameObject[] hardFloors;
     public GameObject[] bossFloors;
     [Header("")]
+    public GameObject[] powerUps;
     [Header("")]
     public GameObject beanBoss;
     public int bossOffSet;
@@ -33,7 +34,7 @@ public class spawnObsticles : MonoBehaviour
         selector = 1; // should be defualt floor
         spawnPointer.position = new Vector3(0f, 0f, 0 * Z_GeneratorOffset); // sets the spawn pointer to the center of the next spot
         GameObject floorClone = Instantiate(easyFloors[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform);
-        if (level <= 3)   // easier level generation for levels 1-5
+        if (level <= 3)   // easier level generation for levels 1-3
         {
             for (int i = 1; i < level * constantOffset; i++)
             {
@@ -43,7 +44,9 @@ public class spawnObsticles : MonoBehaviour
                 spawnPointer.position = new Vector3(0f, floorClone.transform.localScale.y, spawnPointer.position.z);
                 selector = Random.Range(0, easyObsitcles.Length);
                 GameObject obsticleClone = Instantiate(easyObsitcles[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform); Debug.Log(spawnPointer.position.ToString());
-
+                Vector3 powerupClonePosition = new Vector3(spawnPointer.position.x + Random.Range(-5f, 5f), spawnPointer.position.y + Random.Range(3f, 20f), spawnPointer.position.z);
+                GameObject powerupClone = Instantiate(powerUps[Random.Range(0, powerUps.Length)], powerupClonePosition, spawnPointer.rotation, cloneHolder.transform);
+                Debug.Log(powerupClone.transform.position.ToString() + ": power up");
 
             }
         }
@@ -62,7 +65,7 @@ public class spawnObsticles : MonoBehaviour
 
         //    }
         //}
-        else if (level < 3)
+        else if (level > 3 && level < 15)
         {  // medium level generation
             for (int i = 1; i < level * constantOffset; i++)
             {
@@ -72,7 +75,11 @@ public class spawnObsticles : MonoBehaviour
                 spawnPointer.position = new Vector3(0f, floorClone.transform.localScale.y, spawnPointer.position.z);
                 selector = Random.Range(0, mediumObsitcles.Length);
                 GameObject obsticleClone = Instantiate(mediumObsitcles[selector], spawnPointer.position, spawnPointer.rotation, cloneHolder.transform); Debug.Log(spawnPointer.position.ToString());
-
+                if (i % 3 == 0) {
+                Vector3 powerupClonePosition = new Vector3(spawnPointer.position.x + Random.Range(-5f,5f), spawnPointer.position.y + Random.Range(3f, 20f), spawnPointer.position.z);
+                GameObject powerupClone = Instantiate(powerUps[Random.Range(0,powerUps.Length)], powerupClonePosition, spawnPointer.rotation, cloneHolder.transform);
+                Debug.Log(powerupClone.transform.position.ToString() + ": power up");
+                }
 
             }
         }

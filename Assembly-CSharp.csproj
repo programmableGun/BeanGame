@@ -60,7 +60,9 @@
     <Compile Include="Assets\3scripts\playerScripts\bloom.cs" />
     <Compile Include="Assets\3scripts\obsticle.cs" />
     <Compile Include="Assets\3scripts\CleanUP.cs" />
+    <Compile Include="Assets\3scripts\powerups\ScoreBooster.cs" />
     <Compile Include="Assets\3scripts\spawnObsticles.cs" />
+    <Compile Include="Assets\3scripts\powerups\PowerUpHandler.cs" />
     <Compile Include="Assets\3scripts\playerScripts\AudioManager.cs" />
     <Compile Include="Assets\README.cs" />
     <Compile Include="Assets\3scripts\BeanBoss.cs" />
@@ -71,12 +73,12 @@
     <Compile Include="Assets\3scripts\pointCube.cs" />
     <Compile Include="Assets\3scripts\PlayerSettings.cs" />
     <Compile Include="Assets\3scripts\scoreManager.cs" />
+    <Compile Include="Assets\3scripts\powerups\IPowerUps.cs" />
     <Compile Include="Assets\3scripts\playerScripts\player.cs" />
     <Compile Include="Assets\3scripts\playerScripts\movement.cs" />
     <Compile Include="Assets\3scripts\MenuScript.cs" />
-    <Compile Include="Assets\3scripts\powerups\IPowerUps.cs" />
-    <Compile Include="Assets\3scripts\powerups\Multiplier.cs" />
-    <Compile Include="Assets\3scripts\powerups\PowerUpHandler.cs" />
+    <Compile Include="Assets\3scripts\powerups\RocketJump.cs" />
+    <Compile Include="Assets\3scripts\maxDistanceHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

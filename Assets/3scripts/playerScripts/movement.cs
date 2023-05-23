@@ -96,7 +96,11 @@ public class movement : MonoBehaviour
             
         }
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="val"> the value on how much you want to force this object </param>
+    /// <param name="index">1 = x, 2 = y, 3 = z</param>
     public void setVelocity(float val,int index) {
         this.velocity = val;
         if (index == 1) { rb.velocity = new Vector3(velocity, rb.velocity.y, rb.velocity.z); }
@@ -122,7 +126,8 @@ public class movement : MonoBehaviour
         }
         if (collision.gameObject.tag.Equals("endingBlock")) {
             nextLevelLocked = false;
-
+            GameObject.FindGameObjectWithTag("mainScript").GetComponent<maxDistanceHandler>().addMaxDistance(this.gameObject.transform.position.z);
+            GameObject.FindGameObjectWithTag("mainScript").GetComponent<PowerUpHandler>().clearAll();
             //winScreen.SetActive(true);
             canJump = true;
             bloom.DoBloom(true);

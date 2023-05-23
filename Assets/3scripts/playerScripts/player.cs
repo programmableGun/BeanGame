@@ -47,6 +47,7 @@ public class player : MonoBehaviour
             progressBar.value = maxZDistace;
             progressBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
             currentPositionBar.maxValue = GameObject.FindGameObjectWithTag("endingBlock").transform.position.z;
+            
 
         }
         currentPositionBar.value = transform.position.z;
@@ -59,11 +60,15 @@ public class player : MonoBehaviour
         // show a respawn screen
         deadScreen.gameObject.SetActive(true);
 
+
+        // do logic for the max distance ui
+        GameObject.FindGameObjectWithTag("mainScript").GetComponent<maxDistanceHandler>().addMaxDistance(this.gameObject.transform.position.z);
+        GameObject.FindGameObjectWithTag("mainScript").GetComponent<PowerUpHandler>().clearAll();
         // Explode
         //particle.Play();
         // wait for the player to press r >> this gets detected in movement.cs
 
-        
+
     }
     
 }
